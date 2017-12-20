@@ -25,7 +25,7 @@ router.post('/', (req, res, next) => {
 });
 
 // SEARCH by query
-router.post('/search', (req, res, next) => {
+router.get('/search', (req, res, next) => {
 	console.log(req.query);
   todoService
     .searchTodo(req.query.key)
@@ -36,7 +36,7 @@ router.post('/search', (req, res, next) => {
 });
 
 // PUT /api/todos/id
-router.put('/:id', (req, res, next) => {
+	router.put('/:id', (req, res, next) => {
   todoService
     .updateTodo(req.params.id, req.body)
     .then(data => res.json({ data }))

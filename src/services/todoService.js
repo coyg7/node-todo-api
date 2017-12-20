@@ -24,7 +24,7 @@ export function searchTodo(key) {
   // console.log(Tag.tableName);
   return Todo.query(qb => {
     qb.where('name', 'LIKE', '%' + key + '%');
-  }).fetchAll({ withRelated: ['tags'] });
+  }).fetchAll();  //{ withRelated: ['tags'] }
 }
 
 // PUT, edit todo with id
